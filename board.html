@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/join-small-white.svg" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="board.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="sidebar_mobile.css" />
+    <link rel="stylesheet" href="add_tasksBoard.css" />
+
+    <title>Join Board</title>
+</head>
+
+<body onload="loadBoard(), includeLoad(), includeLoad_mobile(), initAddTaskBoardPage()">
+    <!--header sidebar-->
+    <div w3-include-html="header_sidebar.html"></div>
+
+    <!--Tasks Board ON-->
+    <div class="backgroundTasksCard d-none" id="backgroundTasksCard">
+        <div id="task-card" class="task-card task-card-scroll d-none">
+            <div class="margin-bottom-60">
+                <span class="headline-text">Add Task</span>
+                <img src="img/close.svg" onclick="closeBoardAddTasks()" alt="close-img"
+                    style="width: 35px; cursor: pointer;">
+            </div>
+
+            <div>
+                <div id="taskAdded" class="taskAdded d-none">
+                    <img src="img/plus-sign.svg" alt="" />
+                </div>
+            </div>
+
+            <div class="task-Alert" id="taskAlert"></div>
+
+            <form class="column-container" id="form-column" onsubmit="addNewTask(); return false">
+                <div class="column-left">
+                    <label>Title</label>
+
+                    <input type="text" id="title" placeholder="Enter a title..." required />
+
+                    <label>Description</label>
+
+                    <textarea id="description" placeholder="Enter a description..."></textarea>
+
+                    <label>Category</label>
+
+                    <label id="toggleDrop" for="dropdown">
+                        <div class="dropdown-min-cat" id="dropdownMinCategory" onclick="toggleDropdownCategory()">
+                            <div class="select-cat">
+                                <span id="spanText">Select category</span>
+                                <span id="spantextTwo"></span>
+                                <img src="img/arrow_down_black.svg" alt="" />
+                            </div>
+                        </div>
+                        <div id="dropdownCategoryContent" class="dropdown-content d-none">
+                            <div class="dropdown-content show" id="dropdownCategoryContent">
+                                <div class="dropdown-object" onclick="renderNewCategoryField()">
+                                    <div id="newCategory" class="newCategory">New category</div>
+                                    <div id="opencloseBtninput" class="inputBtn d-none">
+                                        <input placeholder="Enter new category" class="newCategoryInput"
+                                            id="newCategoryInput">
+                                        <button class="btnNewCategory" onclick="btnNewCy()">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content show" id="dropdownCategoryContent">
+                                <div class="dropdown-object" onclick="salesCategoryField()">
+                                    <div class="flex-row" id="flex-row">
+                                        <div id="newCategory">Sales</div>
+                                        <div class="category-color" style="background-color: green;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content show" id="dropdownCategoryContent">
+                                <div class="dropdown-object" onclick="marketingCategoryField()">
+                                    <div class="flex-row">
+                                        <div id="newCategory">Marketing</div>
+                                        <div class="category-color" style="background-color: gray;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content show" id="dropdownCategoryContent">
+                                <div class="dropdown-object" onclick="designCategoryField()">
+                                    <div class="flex-row">
+                                        <div id="newCategory">Design</div>
+                                        <div class="category-color" style="background-color: blue;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content show" id="dropdownCategoryContent">
+                                <div class="dropdown-object" onclick="codeCategoryField()">
+                                    <div class="flex-row">
+                                        <div id="newCategory">code</div>
+                                        <div class="category-color" style="background-color: red;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+
+                    <div id="errorMessage" style="color: red"></div>
+                    <div id="categoryDisplay" style="display: none"></div>
+
+                    <div class="d-none" id="categoryEdit"></div>
+
+                    <label>Assigned to</label>
+
+                    <label for="dropdown" onclick="toggleDropdown()">
+                        <div class="dropdown-min" id="dropdownMin">
+                            <span id="categoryTextField"> Select contacts to assign</span>
+                            <img src="img/arrow_down_black.svg" alt="" />
+                        </div>
+                    </label>
+                    <div id="dropdownContent" class="dropdown-content d-none">
+                        <div id="dropdownContainer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border"></div>
+
+                <div class="column-right">
+                    <label>Due Date</label>
+
+                    <input id="datePicker" type="date" placeholder="Enter a description" name="input-date" required /><br /><br />
+
+                    <label>Prio</label>
+
+                    <div id="prio" class="prio">
+                        <div class="prio-btn" id="prioUrgent" onclick="changeColor('Urgent')">
+                            Urgent
+                            <img id="imgUrgent" class="imgUrgentNormal" src="img/up-prio.svg">
+                            <img id="imgUrgentWhite" class="imgUrgentWhite d-none" src="img/PrioUrgentWhite.svg">
+                        </div>
+                        <div class="prio-btn" id="prioMedium" onclick="changeColor('Medium')">
+                            Medium
+                            <img id="imgMedium" class="imgMediumNormal" src="img/medium-prio.svg">
+                            <img id="imgMediumWhite" class="imgMediumWhite d-none" src="img/PrioMediumWhite.svg">
+                        </div>
+                        <div class="prio-btn" id="prioLow" onclick="changeColor('Low')">
+                            Low
+                            <img id="imgLow" class="imgLowNormal" src="img/low-prio.svg">
+                            <img id="imgLowWhite" class="imgLowWhite d-none" src="img/PrioLowWhite.svg">
+                        </div>
+                    </div>
+
+                    <label class="subtask">Subtasks</label>
+                    <div class="subtask-container">
+                        <input type="text" id="subtask-input-content" placeholder="Enter Subtask..." />
+
+                        <div id="subtaskOninput" style="display: flex">
+                            <div class="border-subtask"></div>
+                            <img class="hinzuImg" onclick="subtaskJson()" src="img/plusAddTask.svg" alt="hinzufügen">
+                        </div>
+                    </div>
+
+                    <div id="subtaskContent"></div>
+
+                    <div class="action-button-container">
+                        <button id="clearTask" onclick="clearBtn()" class="clear-task-btn">
+                            Clear
+                            <img src="img/close.svg" />
+                        </button>
+
+                        <button id="addTask" form="form-column" class="add-task-btn" type="submit">
+                            Create Task
+                            <img src="img/check-white.svg" />
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Tasks Board OFF-->
+
+    <!--Board ON-->
+    <div class="board-main-container">
+
+        <div class="headline-container">
+            <div class="headline-left">
+                <h1>Board</h1>
+            </div>
+        </div>
+
+        <div class="board-headline-right">
+            <div class="subtask-container">
+                <input id="searchInput" oninput="searchForTaskByInput()" placeholder="Search..." />
+                <div id="search-input-images" style="display: flex">
+                    <div class="border-subtask"></div>
+                    <img src="img/search.svg" alt="img Luppe" />
+                </div>
+            </div>
+            <div onclick="openAddTaskPopup()" id="add-task-btn-board" class="add-task-btn-board">
+                <button>Add Task</button>
+                <img src="img/plus-sign.svg" alt="" />
+            </div>
+        </div>
+
+        <div class="backgroundAll d-none" id="backgroundAll">
+            <div id="bigInfoCard" class="bigInfoCard">
+            </div>
+            <div id="editCardAlldiv" class="editCardAlldiv d-none"></div>
+        </div>
+
+        <div class="board-content">
+            <div class="board-content-element" data-id="1" id="toDoContainer">
+                <div class="task-type">
+                    <span>To Do</span>
+                    <svg onclick="openAddTaskToDoPopup()" class="svg" width="30" height="30"
+                        viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7.5V22.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22.5 15.1416L7.5 15.1416" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <rect x="1" y="1" width="28" height="28" rx="9" stroke="#2A3647" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="drop-area container valid-container" id="toDo" ondrop="moveTo('toDo')"
+                    ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
+                    <!--DropArea TO DO-->
+                </div>
+            </div>
+
+            <div class="board-content-element" data-id="2" id="progressContainer">
+                <div class="task-type">
+                    <span>In progress</span>
+                    <svg onclick="openAddTaskInProgressPopup()" class="svg" width="30" height="30"
+                        viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7.5V22.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22.5 15.1416L7.5 15.1416" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <rect x="1" y="1" width="28" height="28" rx="9" stroke="#2A3647" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="drop-area container valid-container" id="inProgress" ondrop="moveTo('inProgress')"
+                    ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
+                    <!--DropArea IN PROGRESS-->
+                </div>
+            </div>
+            <div class="board-content-element" data-id="3" id="feedbackContainer">
+                <div class="task-type">
+                    <span>Awaiting feedback</span>
+                    <svg onclick="openAddTaskFeedbackPopup()" class="svg" width="30" height="30"
+                        viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7.5V22.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22.5 15.1416L7.5 15.1416" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <rect x="1" y="1" width="28" height="28" rx="9" stroke="#2A3647" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="drop-area container valid-container" id="feedback" ondrop="moveTo('feedback')"
+                    ondragleave="removeHighlight('feedback')" ondragover="allowDrop(event); highlight('feedback')">
+                    <!--DropArea FEEDBACK-->
+                </div>
+            </div>
+            <div class="board-content-element" data-id="4" id="doneContainer">
+                <div class="task-type">
+                    <span>Done</span>
+                    <svg onclick="openAddTaskDonePopup()" class="svg" width="30" height="30"
+                        viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7.5V22.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22.5 15.1416L7.5 15.1416" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <rect x="1" y="1" width="28" height="28" rx="9" stroke="#2A3647" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="drop-area container valid-container" id="done" ondrop="moveTo('done')"
+                    ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+                    <!--DropArea DONE-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Board OFF-->
+
+    <nav w3-include-html="sibebar_mobile.html" class="side-bar_m"></nav>
+    <!--JS-->
+    <script src="board.js"></script>
+    <script src="boardHTML&Edit.js"></script>
+    <script src="add_task.js"></script>
+    <script src="add_taskCategory.js"></script>
+    <script src="add_tasksBoard.js"></script>
+    <script src="backend.js"></script>
+    <script src="contact.js"></script>
+    <script src="contactHTML.js"></script>
+    <script src="header_sidebar.js"></script>
+    <script src="log-out.js"></script>
+    <script src="sidebar_mobile.js"></script>
+</body>
+
+</html>

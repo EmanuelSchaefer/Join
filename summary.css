@@ -1,0 +1,617 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 330px;
+  position: relative;
+}
+
+.sammary-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-in-summary {
+  display: flex;
+  margin-top: 35px;
+  margin-bottom: 40px;
+  margin-left: 8px;
+  align-items: center;
+}
+
+.summary {
+  font-size: 6.1rem;
+  font-weight: bold;
+}
+
+.img-summary {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.text {
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.three-container {
+  display: flex;
+  gap: 40px;
+}
+
+.container-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 175px;
+  height: 175px;
+  border-radius: 15%;
+  padding: 22px;
+  background-color: white;
+  border: 1px solid #e3e1e1;
+}
+
+.container-tasks:hover,
+.container-tasks:hover .text-tasks {
+  background-color: #2a3647;
+  color: white;
+  cursor: pointer;
+}
+
+.tasks-board {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.tasks-progress {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.awaiting-feedback {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.on-top {
+  width: 100%;
+  margin-top: 90px;
+}
+
+.text-tasks {
+  font-size: 20px;
+  text-align: center;
+  font-weight: lighter;
+  color: #2a3647;
+  padding-top: 10px;
+}
+
+.long-dueContainer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding-top: 60px;
+  height: 200px;
+}
+
+.long-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #e3e1e1;
+  border-radius: 20px;
+  width: 610px;
+}
+
+.long-div:hover,
+.long-div:hover .text-urgent {
+  background-color: #2a3647;
+  color: white;
+  cursor: pointer;
+}
+
+.deadline-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 21px;
+}
+
+.urgent {
+  box-sizing: border-box;
+  width: 180px;
+  height: 175px;
+  display: flex;
+}
+
+.img-urgent {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.urgent-imgimg {
+  width: 53px;
+  height: 53px;
+}
+
+.urgent-nummber {
+  width: 55px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sum-urgent {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.text-urgent {
+  font-size: 20px;
+  color: #2a3647;
+}
+
+.icon-img {
+  height: 80px;
+}
+
+.dateContainer {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.deadline-text {
+  font-size: 20px;
+}
+
+.greet-text {
+  font-size: 50px;
+  color: #2a3647;
+}
+
+.greet-name {
+  font-size: 65px;
+  font-weight: bold;
+  color: #29abe2;
+}
+
+.greet-container {
+  margin-left: 135px;
+}
+
+.to-do-Container {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.to-do-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
+  height: 145px;
+  background-color: white;
+  border: 1px solid #e3e1e1cd;
+  border-radius: 15px;
+  padding: 0 12px;
+}
+
+.to-do-div:hover,
+.to-do-div:hover .text-todo {
+  background-color: #2a3647;
+  color: white;
+  cursor: pointer;
+}
+
+.to-do-div:hover .icon-stift_one {
+  background-image: url(img-summary/imgFrame.png);
+  background-size: 75%;
+  width: 80px;
+  cursor: pointer;
+}
+
+.icon-stift_one {
+  width: 72px;
+  height: 119px;
+  background-image: url(img-summary/FrameStift.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+}
+
+.done-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
+  height: 145px;
+  background-color: white;
+  border: 1px solid #e3e1e1;
+  border-radius: 15px;
+  padding: 0 12px;
+}
+
+.done-div:hover,
+.done-div:hover .text-done {
+  background-color: #2a3647;
+  color: white;
+  cursor: pointer;
+}
+
+.done-div:hover .icon-stift_two {
+  background-image: url(img-summary/Frame.png);
+  background-size: 75%;
+  width: 80px;
+  cursor: pointer;
+}
+
+.icon-stift_two {
+  width: 72px;
+  height: 119px;
+  background-image: url(img-summary/FrameHaken.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+}
+
+.to-do-summe {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sum-todo {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.text-todo {
+  font-size: 20px;
+  color: #2a3647;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconDone-img {
+  width: 53px;
+  height: 53px;
+}
+
+.sum-done-container {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sum-done {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.text-done {
+  font-size: 20px;
+  color: #2a3647;
+}
+
+@media (max-width: 1000px) {
+  body {
+    height: 85rem !important;
+  }
+
+  .container-right {
+    margin-left: 190px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .text {
+    display: none;
+  }
+
+  .img-summary {
+    display: none;
+  }
+
+  .summary {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .greet-container {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .greet-container {
+    display: none;
+  }
+}
+
+@media (max-width: 885px) {
+  .container-right {
+    margin-left: 140px;
+  }
+}
+
+@media (max-width: 850px) {
+  .container-right {
+    margin-left: 115px;
+  }
+}
+
+@media (max-width: 735px) {
+  .container-right {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container-right {
+    margin-left: 45px;
+  }
+
+  .dateContainer {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 670px) {
+  .all-in-summary {
+    margin-left: 0px;
+  }
+
+  .container-tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 133px;
+    height: 155px;
+    border-radius: 15%;
+    padding: 22px;
+    background-color: white;
+    border: 1px solid #e3e1e1;
+  }
+
+  .long-div {
+    width: 484px;
+  }
+
+  .to-do-div {
+    width: 223px;
+  }
+
+  .done-div {
+    width: 223px;
+  }
+
+  .tasks-progress {
+    font-size: 50px;
+  }
+
+  .awaiting-feedback {
+    font-size: 50px;
+  }
+
+  .tasks-board {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 660px) {
+  .container-right {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 585px) {
+  .container-right {
+    margin-left: 53px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container-right {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .container-right {
+    margin-left: 60px;
+  }
+
+  .img-summary {
+    display: none;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .three-container {
+    gap: 5px;
+  }
+
+  .long-div {
+    width: 410px;
+  }
+
+  .to-do-Container {
+    gap: 5px;
+  }
+
+  .to-do-div {
+    width: 200px;
+  }
+
+  .done-div {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-right {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 408px) {
+  .container-right {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .container-tasks {
+    width: 120px;
+    height: 145px;
+  }
+
+  .long-div {
+    width: 370px;
+  }
+
+  .icon-img {
+    height: 80px;
+    padding-right: 16px;
+  }
+
+  .to-do-div {
+    width: 182px;
+  }
+
+  .done-div {
+    width: 182px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container-right {
+    margin-left: 10px;
+  }
+
+  .on-top {
+    margin-top: 65px;
+  }
+
+  .container-tasks {
+    width: 115px;
+    height: 159px;
+  }
+
+  .text-tasks {
+    font-size: 19px;
+  }
+
+  .long-dueContainer {
+    height: 168px;
+  }
+
+  .long-div {
+    width: 355px;
+  }
+
+  .urgent {
+    height: 155px;
+  }
+
+  .icon-img {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .to-do-div {
+    width: 175px;
+    height: 130px;
+  }
+
+  .done-div {
+    width: 175px;
+    height: 130px;
+    padding-right: 4px;
+  }
+
+  .to-do-summe {
+    width: 90px;
+  }
+
+  .all-in-summary {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 370px) {
+  .to-do-summe {
+    width: 60px;
+  }
+
+  .sum-done-container {
+    width: 60px;
+  }
+
+  .to-do-div {
+    width: 150px;
+    height: 120px;
+  }
+
+  .done-div {
+    width: 150px;
+    height: 120px;
+  }
+
+  .img-urgent {
+    width: 63px;
+    margin-right: -5px;
+  }
+
+  .urgent {
+    width: 130px;
+  }
+
+  .deadline-container {
+    padding-right: 0px;
+  }
+
+  .long-div {
+    width: 305px;
+  }
+
+  .container-tasks {
+    width: 98px;
+    height: 140px;
+  }
+
+  .container-tasks {
+    padding: 10px;
+  }
+}

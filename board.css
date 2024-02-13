@@ -1,0 +1,830 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2a3647;
+}
+
+.board-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    margin-bottom: 5rem;
+    margin-top: 12rem;
+    margin-left: 23rem;
+}
+
+.headline-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headline-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 2.4rem;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.1rem;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 6rem;
+    margin-right: 79rem;
+}
+
+.board-headline-right {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.subtask-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 10px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#searchInput {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 2.1rem !important;
+}
+
+.border-subtask {
+    border-right: 0.2rem solid #d1d1d1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.add-task-btn-board {
+    box-sizing: border-box;
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.8rem 1rem;
+    gap: 1rem;
+    margin-left: 3rem;
+    width: 15.7rem;
+    height: 5.1rem;
+    background: #2a3647;
+    border: 1px solid #2a3647;
+    border-radius: 1rem;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.add-task-btn-board:hover {
+    background-color: #29abe2;
+    border: 0;
+}
+
+.add-task-btn-board button {
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 2.1rem;
+    background-color: unset;
+    border: none;
+}
+
+.board-content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    gap: 2rem;
+    margin-bottom: 13rem;
+}
+
+.board-content-element {
+    display: flex;
+    flex-direction: column;
+    width: calc(20% + 3.8rem);
+    gap: 3rem;
+}
+
+.task-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-type span {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+
+.drop-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.drop-area-highlight {
+    border: 1px dashed black;
+}
+
+.todo {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.board-content-element {
+    display: flex;
+    flex-direction: column;
+    width: calc(20% + 3.8rem);
+    gap: 3rem;
+}
+
+.cardContainer {
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0px 0px 5px 3px #00000010;
+    transition: all 0.1s linear;
+    gap: 15px;
+    min-width: 22rem;
+    min-height: 23rem;
+    max-width: 22rem;
+}
+
+.cardContainer:hover {
+    transform: scale(1.05);
+}
+
+.firstBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+    padding: 4px 16px 4px 16px;
+    background-color: #29abe2;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.titleAnddescription {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+h4 {
+    font-size: 2.1rem;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    color: #A8A8A8;
+    font-size: 1.8rem;
+}
+
+.subtasksText {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.selectedP {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    color: #29abe2;
+}
+
+.colorP {
+    margin-left: 20px;
+}
+
+.svg {
+    cursor: pointer;
+}
+
+.svg:hover path {
+    stroke: #29abe2;
+}
+
+.svg:hover rect {
+    stroke: #29abe2;
+}
+
+.editCardAlldiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1111;
+    background-color: #f6f7f8;
+    width: 100rem;
+    border-radius: 13px;
+}
+
+.column-containerEdit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1111;
+    background-color: #f6f7f8;
+    height: 63rem;
+}
+
+.column-leftEdit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: -2px;
+    gap: 15px;
+    margin-right: 55px;
+}
+
+.column-rightEdit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.überAll {
+    font-size: 2.1rem;
+    margin-bottom: 5px;
+}
+
+.urgendBtnEdit {
+    width: 33%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    font-size: 2.1rem;
+    border-radius: 0.7rem;
+    background: white;
+    cursor: pointer;
+}
+
+.prioEdit {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem;
+    margin-bottom: 18px;
+}
+
+.mediumBtnEdit {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    font-size: 2.1rem;
+    border-radius: 0.7rem;
+    background: white;
+    cursor: pointer;
+}
+
+.lowBtnEdit {
+    width: 9rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    font-size: 2.1rem;
+    border-radius: 0.7rem;
+    background: white;
+    cursor: pointer;
+}
+
+.titleEdit {
+    margin-bottom: 15px;
+}
+
+.centerREdit {
+    margin-left: 100px;
+    max-width: 43rem;
+    max-height: 50rem;
+    margin-bottom: 50px;
+}
+
+.untenAEdit {
+    margin-top: 30px;
+}
+
+.subtasksEdit {
+    padding-top: 30px;
+}
+
+.titleInputE {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    height: 4rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    font-size: 2.1rem;
+    width: 28rem;
+}
+
+.descriptionInputE {
+    resize: vertical;
+    font-size: 2.1rem;
+    max-height: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.8rem 2.1rem;
+    isolation: isolate;
+    height: 11.9rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+}
+
+.categoryEdit {
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 15.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 2rem;
+}
+
+.assignedToEdit {
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 15.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 2rem;
+}
+
+.duedateInputE {
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 5rem;
+    padding-right: 6rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 2rem;
+}
+
+.subtasksDivE {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 10px;
+}
+
+.subtasksInputE {
+    font-size: 2.1rem !important;
+    border: none;
+}
+
+.assignedONEdit {
+    padding-top: 15px;
+}
+
+.noTasks {
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+}
+
+/*Board big Info Card*/
+.backgroundAll {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.bigInfoCard {
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    border-radius: 10px;
+    background-color: white;
+    width: 63rem;
+    height: 50rem;
+    overflow-y: auto;
+}
+
+.containerAllBigCard {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.spanTextBig {
+    padding: 4px 24px 4px 30px;
+    background-color: #1FD7C1;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 265px;
+}
+
+.imgCloseBig {
+    margin-left: 50.5rem;
+    margin-top: -50px;
+    cursor: pointer;
+}
+
+.containerBodyInfo {
+    margin-top: 33px;
+}
+
+.pSame {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.pSameText {
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.subtasksDiv {
+    display: flex;
+    margin-left: -14px;
+}
+
+.priorityTwo {
+    display: flex;
+}
+
+.assignedTwo {
+    display: flex;
+}
+
+.subtask-checkbox {
+    cursor: pointer;
+}
+
+.pSameText li {
+    margin-bottom: 5px;
+}
+
+.btnDEclass {
+    height: 33px;
+    width: 80px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.deletebtnEdit {
+    margin-left: 30rem;
+}
+
+#btnDeleteCard:hover {
+    color: #29abe2;
+    border-color: #29abe2;
+}
+
+#btnEditCard:hover {
+    color: #29abe2;
+    border-color: #29abe2;
+}
+
+#subtaskContentEdit {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.mobileN {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-taskM {
+    margin-left: 65px;
+    font-size: 30px;
+    padding: 2px 7px;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.openBigCardS {
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-taskM:hover {
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+
+.mobile-droptaskList {
+    margin-left: 67px;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    color: #e7e7e7;
+    background-color: #2a3647;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 150px;
+    max-height: 116px;
+}
+
+.liRightDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liRightDiv:hover {
+    background-color: hsla(0, 0%, 94%, 0.87);
+}
+
+.dropdown-taskS {
+    padding: 3px;
+    cursor: pointer;
+}
+
+.dropdown-taskS:hover {
+    color: #29abe2;
+}
+
+.srollEditSubtask {
+    width: 400px;
+    height: 70px;
+    overflow-y: auto; 
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    background-color: #f9f9f9;
+}
+
+.nePunkt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification {
+    display: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    color: #333;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+}  
+
+.srollEditSubtask::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.srollEditSubtask::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.srollEditSubtask::-webkit-scrollbar-thumb {
+    background: #29abe2; 
+    border-radius: 3px; 
+}
+
+.srollEditSubtask::-webkit-scrollbar-thumb:hover {
+    background: #29abe2; 
+}
+
+
+/*Mobile CSS*/
+@media only screen and (max-width: 1400px) {
+    .board-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .board-content-element {
+        width: calc(90% - 26px);
+    }
+}
+
+@media (min-width: 1000px) {
+    .dropdown-taskM {
+     display: none;   
+    }
+}
+
+@media (max-width: 1000px) {
+    .board-main-container {
+        margin-left: 0rem;
+    }
+
+    .column-leftEdit {
+        margin-right: -80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .column-containerEdit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90rem;
+    }
+
+    .editCardAlldiv {
+        width: 63rem;
+        height: 90rem;
+        overflow-y: auto;
+    }
+
+    .column-leftEdit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 25rem;
+        gap: 15px;
+        margin-right: 0px;
+    }
+
+    .centerREdit {
+        margin-left: 0px;
+        max-width: 29rem;
+        max-height: 50rem;
+        margin-bottom:60px;
+        margin-top: 23px;
+    }
+}
+
+@media (max-width: 650px) {
+    .spanTextBig {
+        padding: 4px 150px 4px 50px;
+    }
+
+    .bigInfoCard {
+        width: 36rem;
+    }
+
+    .imgCloseBig {
+        margin-left: 23.5rem;
+    }
+
+    .deletebtnEdit {
+        margin-top: 30px;
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 590px) {
+.subtask-container {
+    width: 30rem;
+}
+}
+
+@media (max-width: 500px) {
+    .add-task-btn-board {
+        width: 103px;
+        margin-left: 0rem;
+    }
+
+    .add-task-btn-board button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .add-task-btn-board {
+        margin-left: 0rem;
+        margin-top: 10px;
+    }
+
+    .board-headline-right {
+        display: block;
+    }
+}
+
+@media (max-width: 377px) {
+    .centerREdit {
+        margin-left: 0px;
+        max-width: 29rem;
+        max-height: 50rem;
+        margin-bottom: 0px;
+        margin-top: 23px;
+    }
+}

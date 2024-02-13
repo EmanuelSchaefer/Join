@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="header.css"/>
+<link rel="stylesheet" href="sidebar.css"/>
+
+<body onload="sidimmerhov(), includeLoad()">
+  <!--header on-->
+  <header class="head">
+    <img class="img-mini" src="imgH/Capa.png" />
+    <p class="text-p">Kanban Poject Managment Tool</p>
+
+    <div class="right-header">
+      <a class="help-img" href="help.html">
+        <img class="frage-img" src="imgH/Vector (3).png" />
+      </a>
+
+      <div class="Profile" onclick="Logout()">
+        <img src="imgH/Frame 35.png" />
+        <div id="mobile-options" class="mobile-options d-none">
+          <div class="center-me">
+            <div class="log">
+              <a id="notice-log" class="notice-log" href="legal_notice.html">Legal Notice</a>
+              <a id="log-img" class="log-img" onclick="Logoutout()">Log out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="htmlHelp" id="htmlHelp"></div>
+  <!--header off-->
+
+  <!--sidebar on-->
+  <nav class="side-bar">
+    <div class="side-container">
+      <img class="side-logo" src="img-SBar/Capa 1.png" />
+
+      <div class="side-navigation">
+        <div class="side-around">
+          <div class="box sidebarBtn summary-sidebar" id="summary" onclick="goToPages('summary')">
+            <div class="side-summary">
+              <img class="side-img" src="img-SBar/Vector.png" />
+              <span class="px">Summary</span>
+            </div>
+          </div>
+
+          <div class="box sidebarBtn board-sidebar" id="board" onclick="goToPages('board')">
+            <div class="side-board">
+              <img class="side-img" src="img-SBar/Vector (1).png" />
+              <span class="px">Board</span>
+            </div>
+          </div>
+
+          <div class="box sidebarBtn add_task-sidebar" id="addTask" onclick="goToPages('add_task')">
+            <div class="side-addtask">
+              <img class="side-img" src="img-SBar/Group 1.png" />
+              <span class="px">Add Task</span>
+            </div>
+          </div>
+
+          <div class="box sidebarBtn contacts-sidebar" id="contacts" onclick="goToPages('contact')">
+            <div class="side-contacts">
+              <img class="side-img" src="img-SBar/Vector (2).png" />
+              <span class="px">Contacts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box1 sidebarBtn legal_notice-sidebar" id="legalNotice" onclick="goToPages('legal_notice')">
+        <div class="side-legal">
+          <img class="side-img" src="img-SBar/Group 4.png" />
+          <span class="px">Legal Notice</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--sidebar off-->
+
+  <!--JS-->
+  <script src="header_sidebar.js"></script>
+  <script src="log-out.js"></script>
+</body>
+
+</html>

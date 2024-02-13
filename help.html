@@ -1,0 +1,74 @@
+<link rel="shortcut icon" href="img/join-small-white.svg" type="image/x-icon" />
+<link rel="stylesheet" href="header.css" />
+<link rel="stylesheet" href="sidebar.css" />
+<link rel="stylesheet" href="sidebar_mobile.css" />
+<link rel="stylesheet" href="help.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<body onload="includeLoad(), includeLoad_mobile()">
+  <div w3-include-html="header_sidebar.html"></div>
+  <!--help on-->
+  <div class="right-help-Container">
+    <div class="right-Notiz">
+      <div class="content">
+        <div class="h1-img">
+          <h1>Help</h1>
+          <a href="summary.html">
+            <img class="img-close" href="summary.html" src="imgH/Vector (4).png" />
+          </a>
+        </div>
+        <br>
+        <h2>What is Join ?</h2>
+        <p class="p-px1">
+          Join is a classic task management tool with a Kanban board. You can
+          organize your tasks within a project or business process, it is
+          perfect for collaborating with your team. You and your team can work
+          more efficiently, keeping all your tasks in view and never missing a
+          deadline. Start using Join now to improve your productivity! In
+          addition, Join offers an intuitive user interface. Whether you work
+          alone or as part of a team, Join is an essential tool for anyone
+          looking to manage their tasks effectively.
+        </p>
+        <br>
+        <h2>How to use it</h2>
+        <br>
+        <div class="neben">
+          <p class="nummer">1.</p>
+          <p class="p-px">
+            With Join, you can create an effortlessly manage tasks. Add a title,
+            description, and category to specify your task, and then assign it
+            to other team members from your contact list or invite new contacts
+            to work together on the task.
+          </p>
+        </div>
+        <br>
+        <div class="neben">
+          <p class="nummer">2.</p>
+          <p class="p-px">
+            You can check the current status of your tasks in the kanban-board.
+            You can drag and drop your task to change the status. It is possible
+            to edit the task details.
+          </p>
+        </div>
+        <br>
+        <div class="neben">
+          <p class="nummer">3.</p>
+          <p class="p-px">
+            Add your team members to your contact list to communicate to them
+            fastly. You can assign tasks directly to your contacts. Having team
+            members in your contact list also makes it easier to collaborate
+            with them on projects and stay organized by having all relevant
+            contact information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--help off-->
+  <nav w3-include-html="sibebar_mobile.html" class="side-bar_m"></nav>
+
+  <script src="header_sidebar.js"></script>
+  <script src="sidebar_mobile.js"></script>
+  <script src="log-out.js"></script>
+</body>

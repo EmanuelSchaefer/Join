@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/join-small-white.svg" type="image/x-icon" />
+    <title>Join Log In</title>
+
+    <!--login style-->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="initLogin()">
+    <!-- Onload animation JOIN start -->
+    <img class="logo-b-animation" src="img/join-big.svg" alt="join logo black">
+    <!--  Onload animation JOIN end -->
+
+    <!--Go to Sign up-->
+    <div id="sign-up-container">
+        <p id="sign-up-txt">Not a Join user?</p>
+        <button onclick="registerScreen()" id="sign-up-btn" class="btn btn-blue">
+            Sign up
+        </button>
+    </div>
+
+    <!-- Log in start -->
+    <div id="msgBox"></div>
+    <div class="login-container" id="login-container">
+        <div id="login-header">
+            <p>Log in</p>
+            <div id="login-divider"></div>
+        </div>
+        <form class="login-form" id="login-form" onsubmit="loginUser(); return false;">
+            <div id="login-email">
+                <div class="login-email">
+                    <input autofocus class="login-input" required type="email" name="email" placeholder="Email"
+                        id="email" />
+                    <img class="login-form-img" src="img/email.svg" alt="Email image" />
+                </div>
+            </div>
+            <div id="error-messageEmail" style="color: red; font-size: 13px;"></div>
+
+            <div id="login-password">
+                <div class="login-password">
+                    <input minlength="8" autocomplete="off" class="login-input" required type="password" name="password"
+                        placeholder="Password" id="password" />
+                    <img class="login-form-img" src="img/password.svg" alt="Password image" />
+                </div>
+            </div>
+            <div id="error-messagePasswort" style="color: red; font-size: 13px;"></div>
+        </form>
+        <div id="login-options">
+            <div id="login-remember">
+                <input id="login-check-box" type="checkbox" name="checkbox" />
+                <p>Remember me</p>
+            </div>
+            <div id="login-forgot-password">
+                <p onclick="forgotScreen()">Forgot my password</p>
+            </div>
+        </div>
+        <div id="login-buttons">
+            <button type="submit" form="login-form" id="login" class="btn-blue">
+                Log in
+            </button>
+            <button onclick="guestLoginNow()" id="guest-login">
+                Guest Log in
+            </button>
+        </div>
+    </div>
+    <!-- Log in end -->
+
+    <!--login JS-->
+    <script src="script.js"></script>
+    <script src="signupRegistry.js"></script>
+    <script src="login.js"></script>
+    <script src="summary.js"></script>
+    <script src="backend.js"></script>
+</body>
+
+</html>

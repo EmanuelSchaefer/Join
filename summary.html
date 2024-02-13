@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/join-small-white.svg" type="image/x-icon" />
+  <!--link css-->
+  <link rel="stylesheet" href="summary.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="sidebar_mobile.css" />
+  <link rel="stylesheet" href="mobile-greeting.css" />
+
+  <title>Summary-join</title>
+</head>
+
+<body onload="includeLoad(), includeLoad_mobile(), load(), mobile()">
+  <div w3-include-html="header_sidebar.html"></div>
+
+  <div class="first-mobile-greeting" style="animation: 1s ease-in-out 0s 1 normal forwards running fadeInGreeting;">
+    <div class="mobileTextgreeting" id="mobileTextgreeting"></div>
+    <div class="mobileNamegreeting" id="mobileNamegreeting"></div>
+  </div>
+
+  <!--Summary on-->
+  <div class="on-top" style="display: flex; animation: 1s ease-in-out 0s 1 normal forwards running fadeInGreeting;">
+    <div class="container-right">
+      <div class="summary-container">
+        <div class="all-in-summary">
+          <div class="summary">Summary</div>
+          <img class="img-summary" src="img-summary/Vector 5 (2).png" />
+          <div class="text">Everything in a nutshell!</div>
+        </div>
+      </div>
+
+      <div class="three-container">
+        <div class="container-tasks" onclick="toBoard()">
+          <div class="tasks-board" id="tasks-board">0</div>
+          <div class="text-tasks">Tasks in<br />Board</div>
+        </div>
+        <div class="container-tasks" onclick="toBoard()">
+          <div class="tasks-progress" id="tasks-progress">0</div>
+          <div class="text-tasks">Tasks in<br />Progress</div>
+        </div>
+        <div class="container-tasks" onclick="toBoard()">
+          <div class="awaiting-feedback" id="awaiting-feedback">0</div>
+          <div class="text-tasks">Awaiting<br />Feedback</div>
+        </div>
+      </div>
+
+      <div class="long-dueContainer">
+        <div class="long-div" onclick="toBoard()">
+          <div class="urgent">
+            <div class="img-urgent">
+              <img class="urgent-imgimg" src="img-summary/Frame 59 (6).png" />
+            </div>
+            <div class="urgent-nummber">
+              <div class="sum-urgent" id="sum-urgent">0</div>
+              <div class="text-urgent">Urgent</div>
+            </div>
+          </div>
+          <img class="icon-img" src="img-summary/Vector 5 (3).png" />
+          <div class="deadline-container">
+            <span class="dateContainer" id="dateContainer"></span>
+            <span class="deadline-text">Upcoming Deadline</span>
+          </div>
+        </div>
+        <div class="greet-container" id="greet-container">
+          <div class="greet-text" id="dayGreeting"></div>
+          <div class="greet-name" id="greet-name"></div>
+        </div>
+      </div>
+
+      <div class="to-do-Container">
+        <div class="to-do-div" onclick="toBoard()">
+          <div class="center">
+            <div class="icon-stift_one">
+              <!--<img class="img-stift" src="img-summary/Frame 59 (7).png">-->
+            </div>
+            <div class="to-do-summe">
+              <div class="sum-todo" id="sum-todo">0</div>
+              <div class="text-todo">To-do</div>
+            </div>
+          </div>
+        </div>
+        <div class="done-div" onclick="toBoard()">
+          <div class="center">
+            <div class="icon-stift_two">
+              <!--<img class="iconDone-img" src="img-summary/Frame 59 (8).png">-->
+            </div>
+            <div class="sum-done-container">
+              <div class="sum-done" id="sum-done">0</div>
+              <div class="text-done">Done</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Summary off-->
+  <nav w3-include-html="sibebar_mobile.html" class="side-bar_m"></nav>
+
+  <!--JS-->
+  <script src="login.js"></script>
+  <script src="summary.js"></script>
+  <script src="signupRegistry.js"></script>
+  <script src="backend.js"></script>
+  <script src="header_sidebar.js"></script>
+  <script src="board.js"></script>
+  <script src="boardHTML&Edit.js"></script>
+  <script src="add_task.js"></script>
+  <script src="log-out.js"></script>
+  <script src="sidebar_mobile.js"></script>
+  <script src="mobile-greeting.js"></script>
+</body>
+
+</html>

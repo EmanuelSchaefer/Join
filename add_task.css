@@ -1,0 +1,709 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2a3647;
+}
+
+.task-card {
+    display: block;
+    margin-left: 31rem;
+    margin-top: 12rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+}
+
+.headline-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.1rem;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.taskAdded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+img, svg {
+    vertical-align: middle;
+}
+
+.task-Alert {
+    width: 35rem;
+    height: 5rem;
+    margin-left: -1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 1.6rem;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: inline-block;
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+}
+
+#title {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    font-size: 2.1rem;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 13px;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input {
+    outline: none;
+    font-size: 2.1rem !important;
+}
+
+#description {
+    resize: vertical;
+    font-size: 2.1rem;
+    max-height: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.8rem 2.1rem;
+    gap: 1rem;
+    isolation: isolate;
+    height: 11.9rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.dropdown-min-cat {
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 1rem;
+}
+
+.select-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-min img, .dropdown-min-cat img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.dropdown-content {
+    background-color: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.flex-row {
+    flex-direction: row !important;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.margin-left-10 {
+    margin-left: 1rem;
+}
+
+.category-color {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid white;
+    border-radius: 100%;
+}
+
+.select-color-category {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-color-category div {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid white;
+    border-radius: 100%;
+}
+
+#categoryDisplay {
+    font-size: 2.1rem;
+    color: #29abe2;
+}
+
+.dropdown-min {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 1rem;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input {
+    outline: none;
+    font-size: 2.1rem !important;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.column-right {
+    flex-basis: 50%;
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+}
+
+#datePicker {
+    box-sizing: border-box;
+    font-size: 2.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.8rem 2.1rem;
+    gap: 1rem;
+    isolation: isolate;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    flex: none;
+    flex-grow: 0;
+}
+
+input[type="date"] {
+    color: #d1d1d1;
+}
+
+.prio {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem;
+    margin-bottom: 13px;
+}
+
+.prio div {
+    width: 33%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2.1rem;
+    border-radius: 0.7rem;
+    background: white;
+    cursor: pointer;
+}
+
+.prio div>img {
+    margin-left: 0.7rem;
+}
+
+.subtask-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 10px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#subtask-input-content {
+    border: none;
+    width: 100%;
+}
+
+.border-subtask {
+    border-right: 0.2rem solid #d1d1d1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#subtaskOninput img {
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.action-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 108px;
+}
+
+#clearTask {
+    margin-right: 14rem;
+}
+
+.action-button-container button {
+    font-size: 2.1rem;
+}
+
+.clear-task-btn {
+    background-color: transparent;
+    color: black;
+    border-radius: 1rem;
+    border: 0.1rem solid #2a3647;
+}
+
+.add-task-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem 1.5rem;
+    gap: 1rem;
+    border: 0;
+    color: white;
+    right: 60px;
+    background: #2a3647;
+    border-radius: 10px;
+    width: 20rem;
+}
+
+.clear-task-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem 1.5rem;
+    gap: 1rem;
+    border: 0;
+    color: black;
+    right: 60px;
+    border-radius: 10px;
+    width: 20rem;
+    border: solid 1px black;
+    font-size: 2.1rem;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    border-radius: 0;
+}
+
+.action-button-container img {
+    cursor: pointer;
+}
+
+.column-left {
+    margin-top: 1rem;
+}
+
+.column-right {
+    margin-top: 1rem;
+}
+
+.prio div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.3rem 0.3rem 0 rgba(0, 0, 0, 20%);
+}
+
+.add-task-btn:hover {
+    background: #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.clear-task-btn:hover {
+    filter: invert(50%) sepia(31%) saturate(1195%) hue-rotate(152deg) brightness(111%) contrast(82%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: -8px;
+    border-radius: 5px;
+    border-top: unset;
+    overflow: auto;
+}
+
+.dropdown-object:hover {
+    background-color: #d1d1d1;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.category-color {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid white;
+    border-radius: 100%;
+    margin-left: 1.5rem;
+}
+
+.btnNewCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    background-color: #2a3647;
+    color: white;
+}
+
+.btnNewCategory:hover {
+    background-color: #29abe2;
+    border: 0;
+    height: 28px;
+}
+
+.newCategoryInput {
+    width: 230px;
+}
+
+.dropdown-object {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-left: 1rem;
+    font-size: 2.1rem;
+    cursor: pointer;
+}
+
+span {
+    font-size: 2.1rem;
+}
+
+.dropdown-object input {
+    margin-right: 1rem;
+}
+
+.subtasksList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #ededed;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#checkboxInput {
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.pText {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.inputBtn {
+    display: flex;
+}
+
+#spantextTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prioUrgent.active {
+    background-color: #FF3D00;
+    color: white;
+}
+
+#prioMedium.active {
+    background-color: #FFA800;
+    color: white;
+}
+
+#prioLow.active {
+    background-color: #7AE229;
+    color: white;
+    height: 53px;
+}
+
+.editP {
+    font-size: 15px;
+}
+
+.editP:hover {
+    color: #29abe2;
+    cursor: pointer;
+}
+
+.deleteP {
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.deleteP:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.dLeft {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.dRight {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+}
+
+/*mobile css*/
+@media (max-width: 1210px) {
+    #datePicker {
+        width: 37rem;
+    }
+
+    .subtasksList {
+        width: 37rem;
+    }
+
+    .prio div {
+        width: 27%;
+        margin-right: -23px;
+    }
+
+    .subtask-container {
+        width: 37rem;
+    }
+
+    .action-button-container {
+        margin-right: 77px;
+    }
+
+    .clear-task-btn {
+        width: 115px;
+        height: 56px;
+    }
+
+    .add-task-btn {
+        width: 115px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .task-card {
+        margin-left: 25rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .task-card {
+        margin-left: 16rem;
+    }
+}
+
+@media (max-width: 990px) {
+    .task-card {
+        grid-column: 1/11;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 95%;
+        margin-bottom: 150px;
+    }
+
+    .prio div {
+        width: 115px;
+    }
+
+    .column-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .margin-bottom-60 {
+        margin-bottom: 0rem;
+    }
+
+    #description {
+        margin-bottom: 13px;
+    }
+
+    .border {
+        display: none;
+    }
+
+    label {
+        margin-bottom: 13px;
+    }
+
+    .clear-task-btn {
+        width: 176px;
+        height: 60px;
+        margin-top: -209px;
+    }
+
+    .add-task-btn {
+        width: 176px;
+        height: 60px;
+        margin-top: -209px;
+    }
+
+    .action-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 230px;
+        margin-bottom: 15px;
+        margin-right: -30px;
+    }
+}
+
+@media (max-width: 730px) {
+    .action-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 230px;
+    }
+
+    #clearTask {
+        margin-top: -310px;
+    }
+
+    #addTask {
+        margin-top: -125px;
+    }
+
+    #clearTask {
+        margin-right: 0rem;
+    }
+
+    .action-button-container {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    #datePicker {
+        width: 30rem;
+    }
+
+    .subtask-container {
+        width: 30rem;
+    }
+
+    .prio {
+        display: flex;
+        gap: 3rem;
+        padding: 1rem;
+        margin-bottom: 13px;
+    }
+
+    .prio div {
+        width: 31%;
+        margin-right: -23px;
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/join-small-white.svg" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="add_task.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="sidebar_mobile.css" />
+
+    <title>Join Add Task</title>
+</head>
+
+<body onload="initAddTaskPage()">
+    <div w3-include-html="header_sidebar.html"></div>
+    <div class="task-card task-card-scroll">
+        <div class="margin-bottom-60">
+            <span class="headline-text">Add Task</span>
+        </div>
+
+        <div>
+            <div id="taskAdded" class="taskAdded d-none">
+                <img src="img/plus-sign.svg" alt="" />
+            </div>
+        </div>
+
+        <div class="task-Alert" id="taskAlert"></div>
+
+        <form class="column-container" id="form-column" onsubmit="addNewTask(); return false">
+            <div class="column-left">
+                <label>Title</label>
+
+                <input type="text" id="title" placeholder="Enter a title..." required />
+
+                <label>Description</label>
+
+                <textarea id="description" placeholder="Enter a description..." required></textarea>
+
+                <label>Category</label>
+
+                <label id="toggleDrop" for="dropdown">
+                    <div class="dropdown-min-cat" id="dropdownMinCategory" onclick="toggleDropdownCategory()">
+                        <div class="select-cat">
+                            <span id="spanText">Select category</span>
+                            <span id="spantextTwo"></span>
+                            <img src="img/arrow_down_black.svg" alt="" />
+                        </div>
+                    </div>
+                    <div id="dropdownCategoryContent" class="dropdown-content d-none">
+                        <div class="dropdown-content show" id="dropdownCategoryContent">
+                            <div class="dropdown-object" onclick="renderNewCategoryField()">
+                                <div id="newCategory" class="newCategory">New category</div>
+                                <div id="opencloseBtninput" class="inputBtn d-none">
+                                    <input placeholder="Enter new category" class="newCategoryInput"
+                                        id="newCategoryInput">
+                                    <div class="btnNewCategory" onclick="btnNewCy()">+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-content show" id="dropdownCategoryContent">
+                            <div class="dropdown-object" onclick="salesCategoryField()">
+                                <div class="flex-row" id="flex-row">
+                                    <div id="newCategory">Sales</div>
+                                    <div class="category-color" style="background-color: green;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-content show" id="dropdownCategoryContent">
+                            <div class="dropdown-object" onclick="marketingCategoryField()">
+                                <div class="flex-row">
+                                    <div id="newCategory">Marketing</div>
+                                    <div class="category-color" style="background-color: gray;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-content show" id="dropdownCategoryContent">
+                            <div class="dropdown-object" onclick="designCategoryField()">
+                                <div class="flex-row">
+                                    <div id="newCategory">Design</div>
+                                    <div class="category-color" style="background-color: blue;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-content show" id="dropdownCategoryContent">
+                            <div class="dropdown-object" onclick="codeCategoryField()">
+                                <div class="flex-row">
+                                    <div id="newCategory">code</div>
+                                    <div class="category-color" style="background-color: red;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+                <div id="errorMessage" style="color: red"></div>
+                <div id="categoryDisplay" style="display: none"></div>
+
+                <div class="d-none" id="categoryEdit"></div>
+
+                <label>Assigned to</label>
+
+                <label for="dropdown" onclick="toggleDropdown()">
+                    <div class="dropdown-min" id="dropdownMin">
+                        <span id="categoryTextField"> Select contacts to assign</span>
+                        <img src="img/arrow_down_black.svg" alt="" />
+                    </div>
+                </label>
+                <div id="dropdownContent" class="dropdown-content d-none">
+                    <div id="dropdownContainer">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="border"></div>
+
+            <div class="column-right">
+                <label>Due Date</label>
+
+                <input id="datePicker" type="date" placeholder="Enter a description" name="input-date" required /><br /><br />
+
+                <label>Prio</label>
+
+                <div id="prio" class="prio">
+                    <div class="prio-btn" id="prioUrgent" onclick="changeColor('Urgent')">
+                        Urgent
+                        <img id="imgUrgent" class="imgUrgentNormal" src="img/up-prio.svg">
+                        <img id="imgUrgentWhite" class="imgUrgentWhite d-none" src="img/PrioUrgentWhite.svg">
+                    </div>
+                    <div class="prio-btn" id="prioMedium" onclick="changeColor('Medium')">
+                        Medium
+                        <img id="imgMedium" class="imgMediumNormal" src="img/medium-prio.svg">
+                        <img id="imgMediumWhite" class="imgMediumWhite d-none" src="img/PrioMediumWhite.svg">
+                    </div>
+                    <div class="prio-btn" id="prioLow" onclick="changeColor('Low')">
+                        Low
+                        <img id="imgLow" class="imgLowNormal" src="img/low-prio.svg">
+                        <img id="imgLowWhite" class="imgLowWhite d-none" src="img/PrioLowWhite.svg">
+                    </div>
+                </div>
+
+                <label class="subtask">Subtasks</label>
+                <div class="subtask-container">
+                    <input minlength="3" type="text" id="subtask-input-content" placeholder="Enter Subtask..." />
+
+                    <div id="subtaskOninput" style="display: flex">
+                        <div class="border-subtask"></div>
+                        <img class="hinzuImg" onclick="subtaskJson()" src="img/plusAddTask.svg" alt="hinzufügen">
+                    </div>
+                </div>
+
+                <div id="subtaskContent"></div>
+
+                <div class="action-button-container">
+                    <div id="clearTask" onclick="clearBtn()" class="clear-task-btn">
+                        Clear
+                        <img src="img/close.svg" />
+                    </div>
+
+                    <button id="addTask" form="form-column" class="add-task-btn" type="submit">
+                        Create Task
+                        <img src="img/check-white.svg" />
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <nav w3-include-html="sibebar_mobile.html" class="side-bar_m"></nav>
+    <!--JS-->
+    <script src="signupRegistry.js"></script>
+    <script src="add_task.js"></script>
+    <script src="add_taskCategory.js"></script>
+    <script src="add_tasksBoard.js"></script>
+    <script src="backend.js"></script>
+    <script src="contact.js"></script>
+    <script src="header_sidebar.js"></script>
+    <script src="login.js"></script>
+    <script src="log-out.js"></script>
+    <script src="sidebar_mobile.js"></script>
+</body>
+
+</html>

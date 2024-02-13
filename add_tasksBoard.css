@@ -1,0 +1,748 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.task-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1116px;
+    height: 80rem;
+    margin-top: 60px;
+    background-color: white;
+    border-radius: 1.3rem;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    animation: slideIn 225ms forwards;
+    transform: translateX(-00%);
+    z-index: 11111;
+    margin-left: 20%;
+}
+
+.margin-bottom-60 {
+    display: flex;
+    align-items: center;
+}
+
+.headline-text {
+    font-size: 6rem;
+    font-weight: 600;
+    margin-right: 59rem;
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border-right: 3px solid #d1d1d1 !important;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+}
+
+.column-right {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 2.1rem;
+    margin-top: 1rem !important;
+}
+
+#title {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: 8px;
+}
+
+#description {
+    resize: vertical;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.8rem 2.1rem;
+    gap: 1rem;
+    isolation: isolate;
+    height: 7.5rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: 8px;
+}
+
+.dropdown-min-cat {
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 1.5rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.taskAdded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+img, svg {
+    vertical-align: middle;
+}
+
+.task-Alert {
+    width: 35rem;
+    height: 5rem;
+    margin-left: -1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 1.6rem;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input {
+    outline: none;
+    font-size: 2.1rem !important;
+}
+
+#description {
+    resize: vertical;
+    font-size: 2.1rem;
+    max-height: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.8rem 2.1rem;
+    gap: 1rem;
+    isolation: isolate;
+    height: 11.9rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.dropdown-min-cat {
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 1rem;
+}
+
+.select-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    font-size: 2.1rem;
+}
+
+.dropdown-min img, .dropdown-min-cat img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.dropdown-content {
+    background-color: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    cursor: pointer;
+}
+
+.dropdown-object:hover {
+    background-color: #d1d1d1;
+}
+
+.dropdown-object {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 2.1rem;
+}
+
+.flex-row {
+    flex-direction: row !important;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.margin-left-10 {
+    margin-left: 1rem;
+}
+
+.category-color {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid white;
+    border-radius: 100%;
+    margin-left: 1.5rem;
+}
+
+.select-color-category {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pText {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#checkboxInput {
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.subtasksList {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.subtasksList:hover {
+    background-color: hsla(0, 0%, 94%, 0.87);
+}
+
+.dLeft {
+    display: flex;
+}
+
+.dRight {
+    font-size: 17px;
+    display: flex;
+    gap: 15px;
+}
+
+.dRight:hover {
+    cursor: pointer;
+}
+
+.deleteP:hover {
+    color: red;
+}
+
+.editP:hover {
+    color: #29abe2;
+}
+
+#spantextTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-color-category div {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.1rem solid white;
+    border-radius: 100%;
+}
+
+#categoryDisplay {
+    font-size: 2.1rem;
+    color: #29abe2;
+}
+
+.dropdown-min {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: 0.1rem solid #d1d1d1;
+    font-size: 1rem;
+}
+
+.dropdown-object input {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.btnNewCategory {
+    width: 30px;
+    cursor: pointer;
+    background-color: #2a3647;
+    color: white;
+}
+
+.btnNewCategory:hover {
+    background-color: #29abe2;
+    border: 0;
+    height: 28px;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input {
+    outline: none;
+    font-size: 2.1rem !important;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.column-right {
+    flex-basis: 50%;
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+}
+
+#datePicker {
+    box-sizing: border-box;
+    font-size: 2.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.8rem 2.1rem;
+    gap: 1rem;
+    isolation: isolate;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 1rem;
+    flex: none;
+    flex-grow: 0;
+    margin-top: 8px;
+}
+
+input[type="date"] {
+    color: #d1d1d1;
+}
+
+.prio {
+    display: flex;
+    gap: 3rem;
+    padding: 1rem;
+    margin-bottom: 13px;
+}
+
+.prio div {
+    width: 33%;
+    height: 5.5vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.1rem solid;
+    font-size: 2.1rem;
+    border-radius: 0.7rem;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #cccc;
+}
+
+.prio div>img {
+    margin-left: 0.7rem;
+}
+
+.subtask-containerEdit {
+    box-sizing: border-box;
+    width: 40rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.3rem 2.1rem;
+    gap: 1rem;
+    height: 5.1rem;
+    background: #ffffff;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 10px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: 8px;
+}
+
+#subtask-input-content {
+    border: none;
+    width: 100%;
+}
+
+#subtaskOninput img {
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.border-subtask {
+    border-right: 0.2rem solid #d1d1d1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#subtaskOninput img {
+    height: 2.5rem;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.action-button-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#clearTask {
+    margin-right: 14rem;
+}
+
+.action-button-container button {
+    font-size: 2.1rem;
+}
+
+.clear-task-btn {
+    background-color: transparent;
+    color: black;
+    border-radius: 1rem;
+    border: 0.1rem solid #2a3647;
+}
+
+.add-task-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem 1.5rem;
+    gap: 1rem;
+    border: 0;
+    color: white;
+    right: 60px;
+    background: #2a3647;
+    border-radius: 10px;
+    width: 20rem;
+    font-size: 20px;
+}
+
+.clear-task-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem 1.5rem;
+    gap: 1rem;
+    border: 0;
+    color: black;
+    right: 60px;
+    border-radius: 10px;
+    width: 20rem;
+    border: solid 1px black;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    border-radius: 0;
+}
+
+.action-button-container img {
+    cursor: pointer;
+}
+
+.column-left {
+    margin-top: 1rem;
+}
+
+.column-right {
+    margin-top: 1rem;
+}
+
+.prio div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.3rem 0.3rem 0 rgba(0, 0, 0, 20%);
+}
+
+.add-task-btn:hover {
+    background: #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.clear-task-btn:hover {
+    filter: invert(50%) sepia(31%) saturate(1195%) hue-rotate(152deg) brightness(111%) contrast(82%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.column-container {
+    display: flex;
+}
+
+.backgroundTasksCard {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+#prioUrgent.active {
+    background-color: #FF3D00;
+    color: white;
+}
+
+#prioMedium.active {
+    background-color: #FFA800;
+    color: white;
+}
+
+#prioLow.active {
+    background-color: #7AE229;
+    color: white;
+    height: 53px;
+}
+
+/*mobile css*/
+@media (max-width: 1500px) {
+    .task-card {
+        display: flex;
+        justify-content: unset;
+        width: 560px;
+        overflow-y: auto;
+    }
+
+    .margin-bottom-60 {
+        margin-bottom: -50px;
+        margin-top: 15px;
+    }
+
+    .column-container {
+        margin-bottom: -44rem;
+    }
+
+    .headline-text {
+        font-size: 4rem;
+        font-weight: 600;
+        margin-right: 31rem;
+    }
+
+    .column-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-card {
+        margin-left: 33.5%;
+    }
+
+    .border {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .task-card {
+        margin-left: 5.5px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .prio {
+        display: flex;
+        gap: 0.2rem;
+        padding: 0rem;
+        margin-bottom: 13px;
+    }
+
+    .headline-text {
+        margin-right: 18rem;
+    }
+
+    .column-containerEdit {
+        height: 172%;
+        margin-top: 171px;
+    }
+
+    .prio div {
+        width: 33%;
+        height: 6vh;
+        padding: 1rem;
+    }
+
+    .subtask-containerEdit {
+        width: 29rem;
+        gap: 0rem;
+        margin-top: 0px;
+    }
+
+    #subtaskOninput img {
+        margin-left: 0rem;
+    }
+
+    #subtaskOninput {
+        margin-left: -55px;
+    }
+
+    .srollEditSubtask {
+        width: 290px;
+        padding: 5px;
+    }
+
+    #clearTask {
+        margin-right: 0rem;
+    }
+
+    .column-leftEdit {
+        margin-top: 30rem;
+    }
+
+    .action-button-container {
+        gap: 5px;
+    }
+
+    .editCardAlldiv {
+        width: 63rem;
+        height: 72rem;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 580px) {
+    .headline-text {
+        margin-right: 15rem;
+    }
+
+    .column-container {
+        width: 360px;
+    }
+
+    .task-card {
+        margin-left: 0.5px;
+        margin-top: 0px;
+        height: 100%;
+    }
+
+    #clearTask {
+        margin-right: 0rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .headline-text {
+        margin-right: 8rem;
+    }
+
+    .column-container {
+        width: 300px;
+    }
+
+    .action-button-container button {
+        font-size: 1.5rem;
+    }
+
+    .margin-bottom-60 {
+        z-index: 111;
+    }
+}
+
+@media (max-width: 377px) {
+    .editCardAlldiv {
+        height: 63rem;
+    }
+}
+
+@media (max-width: 341px) {
+    .task-card {
+        overflow-y: unset;
+    }
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/join-small-white.svg" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="sidebar_mobile.css" />
+
+    <title>Join Contact</title>
+</head>
+
+<body onload="initContact(), includeLoad(), includeLoad_mobile()">
+    <!--Contacts ON-->
+    <div class="contact">
+        <div w3-include-html="header_sidebar.html"></div>
+        <div class="board-main-container" id="contact-main">
+            <div class="left-contacts-list" id="contacts-list">
+
+            </div>
+            <div class="right-contacts-new" id="contacts-new">
+                <div id="contacts-header">
+                    <h2>Contacts</h2>
+                    <div id="line"></div>
+                    <p>Better with a team</p>
+                </div>
+            </div>
+            <div class="detailsContacts d-none" id="detailsContacts">
+
+            </div>
+            <button onclick="openNewContact()" id="new-contact" style="display: flex;">
+                <p>New contact</p>
+                <img src="img/add-contact.svg" alt="User img">
+            </button>
+        </div>
+    </div>
+    <!--Contacts OFF-->
+
+    <!--New contact ON-->
+    <div class="contact-container d-none" id="contact-container">
+        <div class="main-contact show-overlay" id="main-contact">
+            <div id="header-addContact">
+                <div class="img-div">
+                    <img src="img/add-contact-join.svg" alt="Join image" style="width: 80px; margin-bottom: 10px;">
+                    <img src="img/close-white.svg" onclick="closeAddContactMobile()" class="white-close"
+                        alt="close-img">
+                </div>
+                <p id="edit-contact-headline" class="header-headline">Add contact</p>
+                <p id="edit-subheadline" class="header-subheadline">Tasks are better with a team!</p>
+                <div class="header-line"></div>
+            </div>
+            <div id="form-addContact">
+                <div class="closeContact-Img" onclick="closeNewContacts()"></div>
+                <div class="contactNew-center">
+                    <div class="user-img">
+                        <img src="img/user-white.svg" alt="user-logo" style="width: 6.2rem;">
+                    </div>
+                    <form onsubmit="createNewContact(); return false;" class="create-new-contact" id="add-form">
+                        <div class="contact-inputs">
+                            <input type="text" name="name" id="inputName" placeholder="Name" required
+                                class="contacts-input" oninput="validateNameInput(this)">
+                            <img src="img/user.svg" alt="img-user" style="padding-right: 21px;">
+                        </div>
+                        <div class="contact-inputs">
+                            <input type="email" name="email" id="inputEmail" placeholder="Email" required
+                                class="contacts-input">
+                            <img src="img/email.svg" alt="img-email" style="padding-right: 21px;">
+                        </div>
+                        <div class="contact-inputs">
+                            <input type="tel" name="phone" id="inputPhone" placeholder="Phone" required
+                                class="contacts-input" oninput="validatePhoneInput(this)">
+                            <img src="img/user.svg" alt="img-user" style="padding-right: 21px;">
+                        </div>
+                        <div id="contact-btn-add">
+                            <button onclick="closeAddContact()" id="addButtonsCancel">
+                                <p>Cancel</p>
+                                <p>X</p>
+                            </button>
+                            <button type="submit" form="add-form" id="addButtonsCreate">
+                                <p>Create contact</p>
+                                <img src="img/done.svg" alt="img-done">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--New contact OFF-->
+
+    <!--Edit contact ON-->
+    <div class="editContact-container d-none" id="editContact-container">
+
+    </div>
+    <!--Edit contact OFF-->
+    <nav w3-include-html="sibebar_mobile.html" class="side-bar_m"></nav>
+    <!--JS-->
+    <script src="contact.js"></script>
+    <script src="contactHTML.js"></script>
+    <script src="header_sidebar.js"></script>
+    <script src="log-out.js"></script>
+    <script src="sidebar_mobile.js"></script>
+    <script src="backend.js"></script>
+</body>
+
+</html>

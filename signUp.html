@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join signUp</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="img/join-small-white.svg" type="image/x-icon" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="initSignUp()">
+    <!-- Sign up start -->
+    <img id="join-start-img" src="img/join-big.svg" alt="join logo">
+    <div class="login-container" id="signup-container">
+        <div class="msgFailSnUp d-none" id="msgFailSnUp">
+            <p>This email already exists</p>
+        </div>
+        <div class="msgWinSnUp d-none" id="msgWinSnUp">
+            <p>Sign Up was successful</p>
+        </div>
+        <div id="arrow-back">
+            <img onclick="backToLoginPage()" src="img/arrow-left.svg" alt="Arrow back" />
+        </div>
+        <div id="login-header">
+            <p>Sign up</p>
+            <div id="login-divider"></div>
+        </div>
+        <form onsubmit="userSignUp(); return false;" class="login-form" id="signup-form">
+            <div id="login-user">
+                <div class="login-user">
+                    <input autofocus minlength="4" class="login-input" required type="text" name="text"
+                        placeholder="First- and Last name" id="signupName" pattern="^[a-zA-Z]+ [a-zA-Z]+$" oninput="validateSignupInput(this)"/>
+                    <img class="login-form-img" src="img/user.svg" alt="User image" />
+                </div>
+            </div>
+
+            <div id="login-email">
+                <div class="login-email">
+                    <input class="login-input" required type="email" name="email" placeholder="Email"
+                        id="signupEmail" />
+                    <img class="login-form-img" src="img/email.svg" alt="Email image" />
+                </div>
+            </div>
+
+            <div id="login-password">
+                <div class="login-password">
+                    <input minlength="8" class="login-input" required type="password" name="password"
+                        placeholder="Password" id="signupPassword" />
+                    <img class="login-form-img" src="img/password.svg" alt="Password image" />
+                </div>
+            </div>
+        </form>
+
+        <button type="submit" form="signup-form" id="signupBtn" class="btn-blue">
+            Sign up
+        </button>
+    </div>
+    <!-- Sign up end -->
+
+    <!--JS-->
+    <script src="script.js"></script>
+    <script src="backend.js"></script>
+    <script src="login.js"></script>
+    <script src="signupRegistry.js"></script>
+</body>
+
+</html>

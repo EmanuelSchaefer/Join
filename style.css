@@ -1,0 +1,646 @@
+/* Root variables */
+:root {
+    /* Button background color */
+    --btnBackgroundColor: #2a3647;
+    /* Input color */
+    --inputColor: #d1d1d1;
+    /* Inactive color */
+    --inactive: #cdcdcd;
+    /* Background color */
+    --bgColor: #f6f7f8;
+    /* Light blue color */
+    --lightBlue: #29abe2;
+    /* Black color */
+    --black: #000000;
+    /* White color */
+    --white: #ffffff;
+    /* Active color */
+    --active: #091931;
+    /* Input border color */
+    --input-border: #a8a8a8;
+    /* Design color */
+    --design: #ff7a00;
+    /* Media color */
+    --media: #ffc701;
+    /* Sales color */
+    --sales: #fc71ff;
+    /* Back Office color */
+    --backOffice: #1fd7c1;
+    /* Marketing color */
+    --marketing: #0038ff;
+    /* Development color */
+    --development: #f44336;
+    /* Contact color one */
+    --contactOne: #0190e0;
+    /* Contact color two */
+    --contactTwo: #ee00d6;
+    /* Contact color three */
+    --contactThree: #02cf2f;
+    /* Contact color four */
+    --contactFour: #ffa800;
+    /* Contact color five */
+    --contactFive: #9327ff;
+    /* Contact color six */
+    --contactSix: #ff5c00;
+    /* Contact color seven */
+    --contactSeven: #4e963d;
+    /* Contact color eight */
+    --contactEight: #32daff;
+    /* Contact color nine */
+    --contactNine: #007cee;
+    /* Contact color ten */
+    --contactTen: #0223cf;
+    /* Contact color eleven */
+    --contactEleven: #cb02cf;
+    /* Contact color twelve */
+    --contactTwelve: #462f8a;
+    /* Contact color thirteen */
+    --contactThirteen: #ffc700;
+    /* Contact color fourteen */
+    --contactFourteen: #af1616;
+    /* Font weight 1 */
+    --weight1: 100;
+    /* Font weight 2 */
+    --weight2: 200;
+    /* Font weight 3 */
+    --weight3: 300;
+    /* Font weight 4 */
+    --weight4: 400;
+    /* Font weight 5 */
+    --weight5: 500;
+    /* Font weight 6 */
+    --weight6: 600;
+    /* Font weight 7 */
+    --weight7: 700;
+    /* Font weight 8 */
+    --weight8: 800;
+    /* Font weight 9 */
+    --weight9: 900;
+    /* Font family */
+    --fontFamily: "Inter", sans-serif;
+}
+
+/* Global styles */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Anchor link styles */
+a {
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/*CSS --- Log in && Sign up --- CSS*/
+html {
+    font-size: 62.5%;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: var(--fontFamily);
+    position: relative;
+    background-color: var(--bgColor);
+}
+
+#join-start-img {
+    position: absolute;
+    top: 80px;
+    left: 77px;
+    max-width: 100px;
+    z-index: 3;
+}
+
+#sign-up-container {
+    width: 28.7rem;
+    height: 5.1rem;
+    position: absolute;
+    top: 148px;    
+    right: 11.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+#sign-up-txt {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: var(--weight4);
+    color: var(--black);
+}
+
+.btn-blue {
+    background-color: var(--btnBackgroundColor);
+    color: var(--white);
+}
+
+.btn {
+    outline: none;
+    border: unset;
+    width: 9.1rem;
+    height: 5.1rem;
+    border-radius: 0.8rem;
+    padding: 0.4rem 1.6rem 0.4rem 1.6rem;
+    font-weight: var(--weight7);
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    cursor: pointer;
+}
+
+.login-container {
+    width: 65.2rem;
+    height: 51.3rem;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--white);
+    border-radius: 3rem;
+    box-shadow: 0rem 0rem 1.4rem 0.3rem rgba(0, 0, 0, 0.05);
+}
+
+#login-header {
+    width: 31.5rem;
+    height: 9.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#login-header p {
+    font-size: 6.1rem;
+    font-weight: var(--weight7);
+    line-height: 7.3rem;
+}
+
+.login-header {
+    width: 62.6rem !important;
+    height: 9.7rem !important;
+}
+
+#login-divider {
+    width: 15rem;
+    height: 0.3rem;
+    background-color: var(--lightBlue);
+}
+
+.login-form {
+    width: 42.2rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#login-email, #login-password, #login-user {
+    width: 42.2rem;
+    height: 5.1rem;
+    border: unset;
+    border: 0.1rem solid var(--inputColor);
+    border-radius: 1rem;
+    padding: 1.3rem 2.1rem;
+    outline: none;
+    display: flex;
+    align-self: flex-start;
+}
+
+.login-email, .login-password, .login-user {
+    width: 38rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-input {
+    width: 100%;
+    border: unset;
+    outline: none;
+    font-size: 2.1rem;
+    font-weight: var(--weight4);
+    line-height: 2.5rem;
+}
+
+.login-form-img {
+    width: 2rem;
+    height: 1.8rem;
+}
+
+#login-options {
+    width: 33.5rem;
+    height: 1.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#login-remember {
+    width: 14.6rem;
+    height: 1.9rem;
+    display: flex;
+    align-items: center;
+}
+
+#login-check-box {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 2rem;
+}
+
+#login-check-box:hover {
+    cursor: pointer;
+}
+
+#login-remember p {
+    font-size: 1.6rem;
+    font-weight: var(--weight4);
+    line-height: 1.9rem;
+}
+
+#login-forgot-password p {
+    font-size: 1.6rem;
+    font-weight: var(--weight4);
+    line-height: 1.9rem;
+    color: var(--lightBlue);
+    cursor: pointer;
+}
+
+#login-buttons {
+    width: 34.1rem;
+    height: 5.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#login, #signupBtn, #forgot-password, #reset-password, #guest-login, #arrow-back img {
+    cursor: pointer;
+}
+
+#login, #signupBtn, #forgot-password, #reset-password {
+    width: 14.5rem;
+    height: 5.1rem;
+    border: unset;
+    padding: 0.4rem 0rem;
+    border-radius: 0.8rem;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: var(--weight7);
+}
+
+.btn-blue {
+    background-color: var(--btnBackgroundColor);
+    color: var(--white);
+}
+
+#guest-login {
+    width: 16.1rem;
+    height: 5.1rem;
+    border: unset;
+    border: 0.1rem solid var(--btnBackgroundColor);
+    border-radius: 0.8rem;
+    background-color: var(--white);
+    color: var(--btnBackgroundColor);
+    font-size: 2.1rem;
+    font-weight: var(--weight7);
+    line-height: 2.5rem;
+}
+
+#guest-login:hover {
+    box-shadow: 0rem 0rem 1.4rem 0.3rem rgba(0, 0, 0, 0.2);
+    color: var(--lightBlue);
+    border: 0.1rem solid var(--lightBlue);
+}
+
+.btn-blue:hover {
+    background-color: var(--lightBlue);
+    transition: all 125ms ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#arrow-back {
+    margin-right: 55rem;
+}
+
+#msgFailSnUp, #msgWinSnUp {
+    width: 35rem;
+    padding: 2rem;
+    background-color: var(--btnBackgroundColor);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--weight5);
+    border-radius: 1rem;
+    position: absolute;
+    top: -15%;
+    left: 24%;
+    z-index: 111111;
+    opacity: 1;
+}
+
+/*Animation Join Start ON*/
+.d-none {
+    display: none !important;
+}
+
+.animation-join {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F6F7F8;
+}
+
+.screen-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F5F5F5;
+    z-index: 1;
+    opacity: 1;
+    animation: 2100ms opacity ease-in-out;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.logo-w-animation {
+    opacity: 0;
+}
+
+.logo-b-animation {
+    opacity: 1;
+}
+
+.logo-w-animation,
+.logo-b-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 274px;
+    transform: translate(-50%, -50%);
+    animation: 1500ms position ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 5;
+}
+
+@keyframes position {
+    0% {
+        top: 50%;
+        left: 50%;
+        width: 274px;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        top: 80px;
+        left: 77px;
+        width: 100px;
+        transform: translate(0%, 0%);
+    }
+}
+
+/*--------------------------------------------------
+  Media Query 
+  ---------------------------------------------------*/
+@media (max-height: 850px) {
+    @keyframes position {
+        100% {
+            top: 20px;
+            left: 77px;
+            width: 40px;
+            transform: translate(0%, 0%);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .screen-animation,
+    .logo-w-animation,
+    .logo-b-animation {
+        animation: none;
+    }
+
+    .logo-w-animation, .logo-b-animation {
+        top: 38px;
+        left: 37px;
+        width: 64px;
+        transform: translate(0, 0);
+    }
+}
+
+/*responsive*/
+@media (max-width: 700px) {
+
+    #arrow-back {
+        margin-right: 23rem;
+    }
+
+    .login-container {
+        width: 43.2rem;
+    }
+
+    .login-form {
+        width: 35rem;
+    }
+
+    #login-email, #login-password, #login-user {
+        width: 35rem;
+    }
+
+    #msgFailSnUp, #msgWinSnUp {
+        width: 26rem;
+        top: -15%;
+        left: 20%;
+    }
+
+    #sign-up-container {
+        width: 25.7rem;
+        margin-left: 280px;
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 3;
+    }
+
+    #join-start-img {
+        position: absolute;
+        top: 28px;
+        left: 15px;
+        max-width: 55px;
+        z-index: 3;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #login, #guest-login {
+        width: 14rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #login-buttons {
+        width: 30rem;
+        margin-top: -30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #login-options {
+        width: 32.2rem;
+        height: 6.9rem;
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #login-email, #login-password, #login-user {
+        width: 32.2rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .login-form {
+        width: 32.2rem;
+    }
+}
+
+@media (max-width: 555px) {
+    #sign-up-container {
+        margin-left: 190px;
+    }
+}
+
+@media (max-width: 450px) {
+    #sign-up-container {
+        margin-left: 63px;
+        height: 0px;
+    }
+
+    #msgFailSnUp, #msgWinSnUp {
+        left: 10%;
+    }
+
+    #login-check-box {
+        margin-right: 0.7rem;
+    }
+
+    .logo-w-animation, .logo-b-animation {
+        top: 3%;
+        left: 17%;
+        transform: none;
+        animation: none;
+    }
+
+    #sign-up-txt {
+        display: none;
+    }
+
+    .login-form {
+        width: 30rem;
+    }
+
+    #login-email, #login-password, #login-user {
+        width: 30rem;
+    }
+
+    #sign-up-btn {
+        margin-left: 15rem;
+        margin-bottom: 188px;
+    }
+
+    #login-options {
+        width: 29.2rem;
+    }
+
+    #join-start-img {
+        top: 18px;
+        left: 5px;
+        height: 60px;
+    }
+
+    .login-container {
+        width: 32rem;
+    }
+
+    #login-header {
+        width: 28.5rem;
+    }
+
+    .logo-b-animation, .logo-w-animation {
+        height: 60px;
+    }
+}
+
+@media(max-height: 850px) {
+    @media(max-width: 900px) {
+        @keyframes position-w-mobile {
+            0% {
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+                top: 20px;
+                left: 37px;
+                width: 40px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes position-b-mobile {
+            0% {
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+                top: 20px;
+                left: 37px;
+                width: 40px;
+                opacity: 1;
+            }
+        }
+    }
+}
+/*Animation Join Start OFF*/
