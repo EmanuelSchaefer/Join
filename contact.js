@@ -286,5 +286,5 @@ function validateNameInput(input) {
  *confirm input phone.
  */
 function validatePhoneInput(input) {
-    input.value = input.value.replace(/[^0-9]/g, '');
+    input.value = input.value.replace(/[^0-9+]/g, '');
 }
