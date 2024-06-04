@@ -18,9 +18,10 @@ let checkboxStates = {};
  */
 async function loadContacts() {
     try {
-        saveContacts = JSON.parse(await getItem('saveContacts')) || [];
+        const saveContacts = JSON.parse(await getItem('saveContacts')) || [];
         loadCheckboxStates();
         dropdownContentList(saveContacts);
+        updateSelectedContactsDisplay();
     } catch (e) {
         console.info('Could not load contacts');
     }
@@ -114,5 +115,23 @@ function toggleCheckbox(checkbox) {
     checkbox.checked = !checkbox.checked;
     checkboxStates[checkbox.value] = checkbox.checked;
     saveCheckboxStates();
+    updateSelectedContactsDisplay();
 }
+
+/**
+ * Updates the display of selected contacts' initials.
+ */
+function updateSelectedContactsDisplay() {
+    const showClickC = document.getElementById('showClickC');
+    showClickC.innerHTML = '';
+    for (const [contact, isChecked] of Object.entries(checkboxStates)) {
+        if (isChecked) {
+            const initials = contact.split(' ').map(name => name.charAt(0)).join('');
+            showClickC.innerHTML += `<div class="contact-initial">${initials}</div>`;
+        }
+    }
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', loadContacts);
 // Assigned to OFF

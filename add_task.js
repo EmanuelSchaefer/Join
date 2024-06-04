@@ -285,6 +285,7 @@ function clearBtn() {
     });
     dropdownContentList();
     saveCheckboxStates();
+    updateSelectedContactsDisplay();
 
     document.getElementById('title').value = '';
     document.getElementById('description').value = '';

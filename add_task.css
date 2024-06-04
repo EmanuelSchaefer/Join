@@ -557,6 +557,17 @@ span {
     align-items: center; 
 }
 
+.showClickC {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #29abe2;
+}
+
 /*mobile css*/
 @media (max-width: 1210px) {
     #datePicker {
