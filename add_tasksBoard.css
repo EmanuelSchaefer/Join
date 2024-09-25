@@ -20,6 +20,8 @@ body {
     transform: translateX(-00%);
     z-index: 11111;
     margin-left: 20%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .margin-bottom-60 {
@@ -591,11 +593,21 @@ button {
 }
 
 /*mobile css*/
+@media (max-width: 1600px) {
+    .task-card {
+        height: 100%;
+        margin-top: 0px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 1500px) {
     .task-card {
         display: flex;
         justify-content: unset;
         width: 560px;
+        height: 100%;
+        margin-top: 0px;
         overflow-y: auto;
     }
 
